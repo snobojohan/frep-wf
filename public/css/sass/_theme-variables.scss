@@ -5,20 +5,31 @@
 $default-border-radius: 2px;
 
 // box shadows
-$default-box-shadow-color: #333;
-$default-box-shadow-h-offset: 1px;
-$default-box-shadow-v-offset: 1px;
-$default-box-shadow-blur: 2px;
-$default-box-shadow-spread: false;
+$default-box-shadow-color: #FEFEFE; // #428BCA;
+$default-box-shadow-h-offset: 0;
+$default-box-shadow-v-offset: 0;
+$default-box-shadow-blur: 1px;
+$default-box-shadow-spread: 1px;
 $default-box-shadow-inset: false;
 
 //// BOOTSTRAP OVERWRITES
 ////////////////////////////////////////////////////////
 
-$icon-font-path:          "../../fonts/";
+$gray: #666;
+
+$link-color:            $gray;
+$link-hover-color:      $gray-light;
+
+$icon-font-path:          	 "../../fonts/";
 // $icon-font-name:          "glyphicons-halflings-regular";
+
+$headings-font-weight:	300;
 
 //// MY DEFAULTS
 ////////////////////////////////////////////////////////
 
 $theme-color-box:	$gray-lighter;
+
+$credit-list-line-height: 1.7em;
+
+$figcap-height: 26px;

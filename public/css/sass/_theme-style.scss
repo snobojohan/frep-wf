@@ -2,15 +2,110 @@
 @import "theme-variables";
 
 body {
-	padding: 60px 0;
+	padding: 50px 0 320px 0;
 }
 
-// Classes
+// fitVids
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+iframe,
+embed,
+object {
+	max-width: 100%;
+}
+
+.fluid-width-video-wrapper{
+	width:100%;
+	position:relative;
+	padding:0;
+	iframe, object, embed {
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+}
+
+
+// New classes
+////////////////////////////////////
+.credit-list {
+	line-height: $credit-list-line-height;
+	h2 {
+		font-size: $font-size-base;
+		font-weight: $font-weight-base;
+		margin-bottom: 0;
+		line-height: $credit-list-line-height;
+		
+	}
+	a {
+		margin-left: .3em;
+	}
+	span {
+		color: $gray;
+		margin-left: .3em;
+	}
+
+}
+.page-narrower {
+	max-width: 700px;
+	margin: 0 auto;
+}
+.backer {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	margin-bottom: 50px;
+}
+
+.dotted-box {
+	border-top: 1px dashed $gray-dark;
+	border-bottom: 1px dashed $gray-dark;
+	padding: $padding-small-vertical 0 30px 0;
+	margin: 15px 0 $padding-large-vertical 0;
+}
+.small-text {
+	font-size: ($font-size-base * 0.85);
+}
+.item-box {
+
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	// text-align: center;
+	padding-top: $padding-large-vertical;
+	padding-bottom: $padding-large-vertical;
+	&:hover {
+		img {
+		  // @include box-shadow();
+          @include opacity(0.8);
+          // @include filter(brightness(1.3) saturate(1.2));
+		}
+        color: #FFF !important;
+	}
+	img {
+		margin-bottom: $padding-large-vertical;
+	}
+    .figcap {
+      background: $body-bg;
+      display: inline-block;
+      padding: 5px 10px 0 0;
+      position: absolute;
+      height: $figcap-height;
+      margin-top: - ($figcap-height + $padding-large-vertical);
+    }
+
+}
+
 .box {
 	color: $gray-dark;
 	display: block;
 	position: relative;
-	min-height: 100px;
+	min-height: 250px;
 	padding: $padding-base-vertical $padding-base-horizontal;
 	margin-bottom: $line-height-computed;
 	background-color: $theme-color-box;
@@ -18,38 +113,95 @@ body {
 	////
 	// @include box-shadow();
 }
+	// BEMS of .box
+	.box--hover {
+	&:hover {
+			color: $gray-darker;
+			background-color: darken($theme-color-box, 10%);
+			text-decoration: none;
+		}
+	}
+	.box--jumbo {
+		min-height: 250px;
+		background-color: $gray-darker;
+		color: #FFF;
+		h2 {
+			font-size: 4em;
+		}
+		
+	}
+	.box__content-bottom {
+		position: absolute;
+		bottom: 0;
+	}
 
-// Standards
+.horiz-list {
+	padding: 0;
+	margin-left: - $padding-base-horizontal;
+	li {
+		list-style-image: none;
+		list-style-type: none;
+		margin-left: 0;
+		white-space: nowrap;
+		display: inline;
+		float: left;
+		padding: 0;
+		a {
+			padding: $padding-large-vertical $padding-base-horizontal;
+			text-decoration: none;
+		}
+		&:first-child, .first {
+			// background-color: red;
+			&:after { 
+				content: "/";
+			}
+		}
+		
+	}
+	@include clearfix;
+}
 
+.topnav {
+	a {
+		color: #FFF;
+        &:hover {
+          color: $gray-light;
+          text-decoration: underline;
+        }
+	}
+	padding: $padding-large-vertical 0;
+	letter-spacing: .14em;
+}
+
+// HELPERS
+.nowrap {
+	white-space: nowrap;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+
+
+// Overwriting Bootstrap
+////////////////////////////////////
+h1 {
+	letter-spacing: .14em;
+}
+h5 {
+	padding: 20px 0;
+}
 blockquote p {
 	font-family: $font-family-serif;
 	font-style: italic;
 }
-
-// BEMS
-.box--hover {
-	&:hover {
-		color: $gray-darker;
-		background-color: darken($theme-color-box, 10%);
-		text-decoration: none;
-	}
-}
-.box--jumbo {
-	min-height: 250px;
-	background-color: $gray-darker;
-	color: #FFF;
-	h2 {
-		font-size: 4em;
-	}
-	
-}
-.box__content-bottom {
-	position: absolute;
-	bottom: 0;
+a {
+	text-decoration: underline;
 }
 
+// BEMS of bootstrap basics 
+.img-responsive--zoom {
+	width: 100%;
+}
 .container--narrowed {
-	max-width: 800px;
-	padding-right: $padding-small-horizontal;
-	padding-left: $padding-small-horizontal;
+	max-width: 980px;
 }

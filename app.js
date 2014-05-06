@@ -9,6 +9,12 @@ var 	express = require('express')
 	,	http = require('http')
 	,	path = require('path');
 
+
+/*
+var videosDb = dirty('videos.db');
+var userDb = dirty('user.db');
+*/
+
 var app = express();
 
 var locals = {
@@ -42,11 +48,15 @@ if ('development' == app.get('env')) {
 // Routing
 ////////////////////////////////////////
 app.get('/', routes.index);
-app.get('/test', routes.test);
+// app.get('/test', routes.test);
+app.get('/video/:id', routes.video);
+
+// test
+// app.get('/dirtypost', routes.dirtypost);
 
 /* The 404 Route (ALWAYS Keep this as the last route) */
 app.use(function(req, res, next){
-    res.status(404).render('404', {title: "Sorry, page not found"});
+    res.status(404).render('404', {title: "Tyvärr, sidan finns inte"});
 });
 
 http.createServer(app).listen(app.get('port'), function(){

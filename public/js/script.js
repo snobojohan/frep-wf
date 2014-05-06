@@ -1,1 +1,3 @@
-// alert("script.js");
+$(document).ready(function(){
+    $(".video-wrapper").fitVids();
+});
